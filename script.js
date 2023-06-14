@@ -186,7 +186,17 @@ let addition=document.querySelector('#plus')
 
 let subtraction=document.querySelector('#subtract')
 let multiplication=document.querySelector('#multiply')
+let decimal=document.querySelector("#decimal");
+decimal.addEventListener('click',function(e){
 
+    let value=input.textContent+".";
+    input.textContent=value;
+
+
+
+
+
+})
 
 
 divide.addEventListener('click',function(e){
