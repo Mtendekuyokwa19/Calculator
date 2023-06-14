@@ -1100,110 +1100,208 @@ equal.addEventListener('click',function(e){
     let num=calculating();
     let result=0
     let answerArray=num.split("")
-    for( let numeric in answerArray){
-    //checks if any character is + so that it should add
-
-        if("+"==answerArray[numeric]){
-
-
-           
-          
-            answerArray=answerArray.join("")
-            answerArray=answerArray.split("+")
+    if(answerArray[0]=="-"){
+        answerArray=answerArray.join("")
+        answerArray=answerArray.replace("-","#")
+        answerArray=answerArray.split("");
+        for( let numeric in answerArray){
+            //checks if any character is + so that it should add
+        
+                if("+"==answerArray[numeric]){
+        
+        
+                    console.log("yeah")
+                  
+                    answerArray=answerArray.join("")
+                    answerArray=answerArray.replace("#","-")
+                    answerArray=answerArray.split("+")
+                  
+                    for(let numeric in answerArray){
+                        let num=parseFloat(answerArray[numeric])
+                        result=num+result
+                
+                
+                    }
+                    finalAnswer.textContent=result;
+                   input.textContent=result  ;
+        
+                    console.log(result)
+                   
+                }
+                else if("*"==answerArray[numeric]){
+    
+    
+                    console.log("multiply")
+                  
+                    answerArray=answerArray.join("")
+                    answerArray=answerArray.replace("#","-")
+                    answerArray=answerArray.split("*")
+                    console.log("multiply",answerArray)
+                    let result=1;
+                    
+                        let num=parseFloat(answerArray[numeric])
+                        console.log(num)
+                        result=answerArray[0]*answerArray[1]
+                
+                
+                    
+                    finalAnswer.textContent=result;
+                   input.textContent=result ;
+        
+                    console.log(result)
+                   
+                   
+                }
+        
+                else if("/"==answerArray[numeric]){
+        
+        
+                    console.log("yeah")
+                  
+                    answerArray=answerArray.join("")
+                    answerArray=answerArray.replace("#","-")
+                  answerArray=answerArray.split("/")
+                    console.log(answerArray)
+                    let result=1;
+                        let num;
+                        //let num=parseFloat(answerArray[add])
+                        //console.log(num)
+                        result=answerArray[0]/answerArray[answerArray.length-1]
+                        
+                
+                
+                    
+                    finalAnswer.textContent=result;
+                    input.textContent=result;
+        
+                    console.log(result)
+                   
+                   
+                    }
+                else if("-"==answerArray[numeric]){
+        
+        
+                    console.log("yeah")
+                  
+                    answerArray=answerArray.join("")
+                    
+                  answerArray=answerArray.split("-")
+                  answerArray=answerArray[0].replace("#","-")
+                    console.log(answerArray)
+                    let result=1;
+                        let num;
+                        //let num=parseFloat(answerArray[add])
+                        //console.log(num)
+                        result=answerArray[0]-answerArray[1]
+                        
+                
+                
+                    
+                    finalAnswer.textContent=result;
+                   input.textContent=result;
+        
+                    console.log(result)
+                   
+                   
+                }
+                
+                
+    
+    
+        console.log(answerArray)
             
-            for(let numeric in answerArray){
-                let num=parseFloat(answerArray[numeric])
-                result=num+result
-                
-                
+     }}
+    
+
+
+
+    
+    
+    else {
+        for (let numeric in answerArray) {
+            //checks if any character is + so that it should add
+            if ("+" == answerArray[numeric]) {
+
+
+
+
+                answerArray = answerArray.join("")
+                answerArray = answerArray.split("+")
+
+                for (let numeric in answerArray) {
+                    let num = parseFloat(answerArray[numeric])
+                    result = num + result
+
+
+                }
+                finalAnswer.textContent = result
+                input.textContent = result
+
             }
-            finalAnswer.textContent=result;
-            input.textContent=result;
-           
+            else if ("*" == answerArray[numeric]) {
+
+
+
+
+                answerArray = answerArray.join("")
+                answerArray = answerArray.split("*")
+
+                let num = parseFloat(answerArray[numeric])
+                result = answerArray[0] * answerArray[1]
+
+
+                input.textContent = result
+                finalAnswer.textContent = result
+                console.log(result)
+
+            }
+            else if ("-" == answerArray[numeric]) {
+
+
+                console.log("yeah")
+
+                answerArray = answerArray.join("")
+                answerArray = answerArray.split("-")
+
+
+
+                result = answerArray[0] - answerArray[1]
+
+
+                input.textContent = result
+                finalAnswer.textContent = result
+                console.log(result)
+
+            }
+            else if ("/" == answerArray[numeric]) {
+
+
+                console.log("yeah")
+
+                answerArray = answerArray.join("")
+                answerArray = answerArray.split("/")
+
+
+
+                result = answerArray[0] / answerArray[1]
+
+
+                input.textContent = result
+                finalAnswer.textContent = result
+                console.log(result)
+
+            }
+
         }
-        else if("*"==answerArray[numeric]){
-
-
-          
-          
-            answerArray=answerArray.join("")
-            answerArray=answerArray.split("*")
-        
-                let num=parseFloat(answerArray[numeric])
-                result=answerArray[0]*answerArray[1]
-        
-        
-                input.textContent=result;
-            finalAnswer.textContent=result;
-            console.log(result)
-           
-        }
-       else if("-"==answerArray[numeric]){
-
-
-            console.log("yeah")
-          
-            answerArray=answerArray.join("")
-            answerArray=answerArray.split("-")
-        
-           
-                
-                result=answerArray[0]-answerArray[1]
-        
-        
-                input.textContent=result;
-            finalAnswer.textContent=result;
-            console.log(result)
-           
-        }
-        else if("/"==answerArray[numeric]){
-
-
-            console.log("yeah")
-          
-            answerArray=answerArray.join("")
-            answerArray=answerArray.split("/")
-        
-           
-                
-                result=answerArray[0]/answerArray[1]
-        
-        
-                input.textContent=result;
-            finalAnswer.textContent=result;
-            console.log(result)
-           
-        }
-       
-        
-       
-       
-        
-
 
     }
-    
-   
- 
 
-  
-        
-        
-
-  
-    console.log(answerArray)
-
-
-
-})
+    })
 
 clear.addEventListener('click',function(e){
     
     input.textContent="0";
     finalAnswer.textContent="0";
-
-
-
 })
 
 
