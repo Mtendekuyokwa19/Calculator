@@ -1303,6 +1303,25 @@ clear.addEventListener('click',function(e){
     input.textContent="0";
     finalAnswer.textContent="0";
 })
+let del=document.querySelector("#clearOne")
+//a delet button that removes only the last element
+del.addEventListener('click',function(e){
+let clear;
+    clear=calculating();
+    clear=clear.split("")
+    if(clear.length==1){
+        input.textContent="0";
+
+
+    }
+    else{
+    clear=clear.slice(0,clear.length-1)
+    clear=clear.join("")
+    input.textContent=clear;
+    }
+
+
+})
 
 
   
