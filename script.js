@@ -796,20 +796,20 @@ subtraction.addEventListener('click',function(e){
         
         else if("*"==answerArray[numeric]){
 
-
+            
             console.log("yeah")
           
             answerArray=answerArray.join("")
            
             answerArray=answerArray.split("*")
             let result=1;
-            for(let add in answerArray){
-                let num=parseFloat(answerArray[numeric])
-                console.log(num)
-                result=num*result
+            
+                
+                
+                result=answerArray[0]*answerArray[1]
         
         
-            }
+            
             finalAnswer.textContent=result;
            input.textContent=result ;
 
@@ -873,6 +873,8 @@ subtraction.addEventListener('click',function(e){
 
 }  let value=input.textContent+"-";
 input.textContent=value;})
+
+
 multiplication.addEventListener('click',function(e){
     
     
