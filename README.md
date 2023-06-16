@@ -1,7 +1,8 @@
 # Calculator
 *The Calculator App is a user-friendly and versatile tool designed to perform basic mathematical operations with ease. Whether you need to add, subtract, multiply, or divide numbers, this calculator has got you covered.*  
 ### DEVELOPMENT
-    * The calculator was coded using the array method and not the variable method which is commonly used for development. This was one to show uniqueness and comprehesive programming skills
+    * The calculator was coded using the array method and not the variable method which is commonly used for development. 
+    This was one to show uniqueness and comprehesive programming skills
     *Pseudocode was developed using a flowchart so that ideas were easily refracted.
     *All the development including the User interface was designed by the coder
 
@@ -14,7 +15,7 @@
     *answer was created as a reference point and its removal later created multiple bugs hence it was left and just minimised
 ### How To use
     There different ways on how you can use this 
-        *use the [link] (https://calculator-xi-self.vercel.app/). provided
+        *use the [link](https://calculator-xi-self.vercel.app/). provided
         
         *fork the git folder and use it offline
 
