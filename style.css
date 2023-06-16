@@ -3,37 +3,47 @@
 
 body{
 
-background-color: #a3a0ad;
+background-color: #27374D;
 
 
 }
 #myInput{
   width:19rem ;
   height: 5rem;
-border: none;
+
+box-sizing: border-box;
+padding-top: 13px;
+
 outline: none;
 background-color:#5B8FB9;
 margin: 10px;
-font-size: 24px;
+font-size: 34px;
 color: white;
 display: flex;
 flex-wrap: wrap;
+
+justify-content: end;
+
+  border: 1px solid #333333;
+ 
+  overflow-x:auto;
 
 }
 .container{
     color: azure;
     background-color: #03001C;
     width: 20rem;
-    height: 33rem;
+    height: 28rem;
    border: solid 3px #B6EADA;
     margin-left: 30rem;
-    margin-top: 3rem;
+    margin-top: 6rem;
     border-radius: 14px;
     display: flex;
     flex-direction: column;
     
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-
+    box-shadow: 7px 21px 54px 20px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 7px 21px 54px 20px rgba(0,0,0,0.75);
+    -moz-box-shadow: 7px 21px 54px 20px rgba(0,0,0,0.75);
 
 
 }
@@ -42,7 +52,7 @@ flex-wrap: wrap;
     font-size: 24px;
     background-color:#5B8FB9; 
     width: 20rem;
-    height: 12rem;
+    height: 6rem;
     border: solid none 3px;
     border-top-left-radius:10px ;
     border-top-right-radius:10px ;
@@ -79,7 +89,7 @@ box-sizing:border-box ;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
 
-flex-grow: 1;
+/*flex-grow: 1;*/
 
 border-bottom-left-radius:14px ;
 border-bottom-right-radius:14px ;
@@ -93,8 +103,7 @@ border-top: solid 1px blue;
     color: #212121;
     background-color: yellow;
     border-radius: 100%;
-    
-    
+   
         
     }
 
@@ -103,10 +112,29 @@ border-top: solid 1px blue;
         justify-content: end;
         height: 3rem;
       margin-right: 10px;
-      font-size: 34px;
+      font-size: 0.1px;
+      color: #27374D;
 
 
     }
 
+ 
+   
+  .github{
+    background: white;
+    color: black;
+    fill: black;
+  
+  width: 34px;
+height: 40px;
+margin-top: 4rem;
+margin-left: 9rem;
+border-radius:80% ;
+}
 
+    .github:hover{
+      background: #6441a5;
+      color: white ;
+      fill: white;
 
+  }

@@ -20,7 +20,7 @@ let calculating=(answer) => {
 }
 //assigning buttons to numbers
 one.addEventListener('click',function(e){
-    if (input.textContent==0){
+    if (input.textContent=="0"){
 
         input.textContent="1"
     }
@@ -35,7 +35,7 @@ one.addEventListener('click',function(e){
 
 
 two.addEventListener('click',function(e){
-    if (input.textContent==0){
+    if (input.textContent=="0"){
 
         input.textContent="2"
     }
@@ -49,7 +49,7 @@ two.addEventListener('click',function(e){
 })
 
 three.addEventListener('click',function(e){
-    if (input.textContent==0){
+    if (input.textContent=="0"){
 
         input.textContent="3"
     }
@@ -62,7 +62,7 @@ three.addEventListener('click',function(e){
     }
 })
 four.addEventListener('click',function(e){
-    if (input.textContent==0){
+    if (input.textContent=="0"){
 
         input.textContent="4"
     }
@@ -77,7 +77,7 @@ four.addEventListener('click',function(e){
 
 
 five.addEventListener('click',function(e){
-    if (input.textContent==0){
+    if (input.textContent=="0"){
 
         input.textContent="5"
     }
@@ -91,7 +91,7 @@ five.addEventListener('click',function(e){
 })
 
 six.addEventListener('click',function(e){
-    if (input.textContent==0){
+    if (input.textContent=="0"){
 
         input.textContent="6"
     }
@@ -106,7 +106,7 @@ six.addEventListener('click',function(e){
 
 
 seven.addEventListener('click',function(e){
-    if (input.textContent==0){
+    if (input.textContent=="0"){
 
         input.textContent="7"
     }
@@ -120,7 +120,7 @@ seven.addEventListener('click',function(e){
 })
 
 eight.addEventListener('click',function(e){
-    if (input.textContent==0){
+    if (input.textContent=="0"){
 
         input.textContent="8"
     }
@@ -134,7 +134,7 @@ eight.addEventListener('click',function(e){
 })
 
 nine.addEventListener('click',function(e){
-    if (input.textContent==0){
+    if (input.textContent=="0"){
 
         input.textContent="9"
     }
@@ -148,7 +148,7 @@ nine.addEventListener('click',function(e){
 })
 
 zero.addEventListener('click',function(e){
-    if (input.textContent==0){
+    if (input.textContent=="0"){
 
         input.textContent="0"
     }
@@ -161,7 +161,7 @@ zero.addEventListener('click',function(e){
     }
 })
 twoZero.addEventListener('click',function(e){
-    if (input.textContent==0){
+    if (input.textContent=="0"){
 
         input.textContent="00"
     }
@@ -1331,6 +1331,19 @@ let clear;
     clear=clear.join("")
     input.textContent=clear;
     }
+
+
+})
+let square=document.querySelector('#square')
+
+square.addEventListener('click',()=>{
+
+let ans=input.textContent;
+ans=parseFloat(ans)
+ans=ans*ans;
+
+input.textContent=ans
+
 
 
 })

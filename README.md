@@ -1,4 +1,4 @@
-**# Calculator
+# Calculator
 The Calculator App is a user-friendly and versatile tool designed to perform basic mathematical operations with ease. Whether you need to add, subtract, multiply, or divide numbers, this calculator has got you covered.  
 DEVELOPMENT
     1. The calculator was coded using the array method and not the variable method which s commonly used for development.
@@ -12,10 +12,10 @@ ERRORS, WARNINGS & DRAWBACKS
     2.The calculator has not yet been linked to desktop keyboard so currently it is an on screen calculator
     3.After a NaN error you have to press the AC button so that it should be removed because currently
      the option of just clicking a number has not been added
-
+    4.answer was created as a reference point and its removal later created multiple bugs hence it was left and just minimised
 How To use
     There different ways on how you can use this 
         1.use the link provided
-
+        **
         2.fork the git folder and use it offline
         **
