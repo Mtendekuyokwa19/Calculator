@@ -1,8 +1,9 @@
 # Calculator
 *The Calculator App is a user-friendly and versatile tool designed to perform basic mathematical operations with ease. Whether you need to add, subtract, multiply, or divide numbers, this calculator has got you covered.*  
 ### DEVELOPMENT
-    1. The calculator was coded using the array method and not the variable method which is commonly used for development. 
-      This was one to show uniqueness and comprehesive programming skills
+    1. The calculator was coded using the array method and not the variable method
+    which is commonly used for development. This was one to show uniqueness and 
+    comprehesive programming skills
     2. Pseudocode was developed using a flowchart so that ideas were easily refracted.
     3. All the development including the User interface was designed by the coder
 
