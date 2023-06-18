@@ -18,871 +18,89 @@ let calculating=(answer) => {
    
     return answer;
 }
-//assigning buttons to numbers
-one.addEventListener('click',function(e){
+
+let Number=(num)=>{
+    num=num.toString()
     if (input.textContent=="0"){
 
-        input.textContent="1"
+         input.textContent=num
     }
     else{
-
-        let value=input.textContent+"1";
-        input.textContent=value;
+      
+        let value=input.textContent+num;
+         input.textContent=value;
     
 
     }
-})
 
+
+
+}
+
+//assigning buttons to numbers
+one.addEventListener('click',function(e)
+{Number(1)})
 
 two.addEventListener('click',function(e){
-    if (input.textContent=="0"){
+    Number(2)})
 
-        input.textContent="2"
-    }
-    else{
-
-        let value=input.textContent+"2";
-        input.textContent=value;
-    
-
-    }
-})
-
-three.addEventListener('click',function(e){
-    if (input.textContent=="0"){
-
-        input.textContent="3"
-    }
-    else{
-
-        let value=input.textContent+"3";
-        input.textContent=value;
-    
-
-    }
-})
+three.addEventListener('click',function(e){ 
+    Number(3)})
 four.addEventListener('click',function(e){
-    if (input.textContent=="0"){
-
-        input.textContent="4"
-    }
-    else{
-
-        let value=input.textContent+"4";
-        input.textContent=value;
-    
-
-    }
+   Number(4)
 })
-
 
 five.addEventListener('click',function(e){
-    if (input.textContent=="0"){
-
-        input.textContent="5"
-    }
-    else{
-
-        let value=input.textContent+"5";
-        input.textContent=value;
-    
-
-    }
+   Number(5)
 })
 
 six.addEventListener('click',function(e){
-    if (input.textContent=="0"){
-
-        input.textContent="6"
-    }
-    else{
-
-        let value=input.textContent+"6";
-        input.textContent=value;
-    
-
-    }
+ Number(6) 
 })
 
-
 seven.addEventListener('click',function(e){
-    if (input.textContent=="0"){
-
-        input.textContent="7"
-    }
-    else{
-
-        let value=input.textContent+"7";
-        input.textContent=value;
-    
-
-    }
+   Number(7)
 })
 
 eight.addEventListener('click',function(e){
-    if (input.textContent=="0"){
-
-        input.textContent="8"
-    }
-    else{
-
-        let value=input.textContent+"8";
-        input.textContent=value;
-    
-
-    }
+ Number(8)
 })
 
 nine.addEventListener('click',function(e){
-    if (input.textContent=="0"){
-
-        input.textContent="9"
-    }
-    else{
-
-        let value=input.textContent+"9";
-        input.textContent=value;
-    
-
-    }
+   Number(9)
 })
 
 zero.addEventListener('click',function(e){
-    if (input.textContent=="0"){
-
-        input.textContent="0"
-    }
-    else{
-
-        let value=input.textContent+"0";
-        input.textContent=value;
-    
-
-    }
+  Number(0)
 })
 twoZero.addEventListener('click',function(e){
-    if (input.textContent=="0"){
-
-        input.textContent="00"
-    }
-    else{
-
-        let value=input.textContent+"00";
-        input.textContent=value;
-    
-
-    }
+    Number("00");
 })
-
-
-
-
 
 //assigning signs to symbols
 let finalAnswer=document.querySelector('#answer')
 let equal=document.querySelector('#equals')
 let divide=document.querySelector('#divide')
 let addition=document.querySelector('#plus')
-
 let subtraction=document.querySelector('#subtract')
 let multiplication=document.querySelector('#multiply')
 let decimal=document.querySelector("#decimal");
+let del=document.querySelector('#clearOne');
+let sign=(symbol)=>{
+ 
+    let value=input.textContent+symbol;
+    input.textContent=value;
+}
 decimal.addEventListener('click',function(e){
-
-    let value=input.textContent+".";
-    input.textContent=value;
-
-
-
-
-
+    sign(".");
+   
 })
 
-
-divide.addEventListener('click',function(e){
-  /*the first if-else statement is used to allow use of negative numbers
-  so it simply checks on that
-  the # symbol is used so that it replaces the numbe it replaces it back with the negative symbol*/
-    let num=calculating();
-    let result=0
-    let answerArray=num.split("")
-    if (answerArray[0]=="-"){
-        answerArray=answerArray.join("")
-        answerArray=answerArray.replace("-","#")
-        answerArray=answerArray.split("");
-        for( let numeric in answerArray){
-            //checks if any character is + so that it should add
-        
-                if("+"==answerArray[numeric]){
-        
-        
-                    console.log("yeah")
-                  
-                    answerArray=answerArray.join("")
-                    answerArray=answerArray.replace("#","-")
-                    answerArray=answerArray.split("+")
-                  
-                    for(let numeric in answerArray){
-                        let num=parseFloat(answerArray[numeric])
-                        result=num+result
-                
-                
-                    }
-                    finalAnswer.textContent=result;
-                   input.textContent=result  ;
-        
-                    console.log(result)
-                   
-                }
-                else if("*"==answerArray[numeric]){
-    
-    
-                    console.log("multiply")
-                  
-                    answerArray=answerArray.join("")
-                    answerArray=answerArray.replace("#","-")
-                    answerArray=answerArray.split("*")
-                    console.log("multiply",answerArray)
-                    let result=1;
-                    
-                        let num=parseFloat(answerArray[numeric])
-                        console.log(num)
-                        result=answerArray[0]*answerArray[1]
-                
-                
-                    
-                    finalAnswer.textContent=result;
-                   input.textContent=result ;
-        
-                    console.log(result)
-                   
-                   
-                }
-        
-                else if("/"==answerArray[numeric]){
-        
-        
-                    console.log("yeah")
-                  
-                    answerArray=answerArray.join("")
-                    answerArray=answerArray.replace("#","-")
-                  answerArray=answerArray.split("/")
-                    console.log(answerArray)
-                    let result=1;
-                        let num;
-                        //let num=parseFloat(answerArray[add])
-                        //console.log(num)
-                        result=answerArray[0]/answerArray[answerArray.length-1]
-                        
-                
-                
-                    
-                    finalAnswer.textContent=result;
-                    input.textContent=result;
-        
-                    console.log(result)
-                   
-                   
-                }
-                else if("-"==answerArray[numeric]){
-        
-        
-                    console.log("yeah")
-                  
-                    answerArray=answerArray.join("")
-                    
-                  answerArray=answerArray.split("-")
-                  answerArray=answerArray[0].replace("#","-")
-                    console.log(answerArray)
-                    let result=1;
-                        let num;
-                       
-                        result=answerArray[0]-answerArray[1]
-                        
-                
-                
-                    
-                    finalAnswer.textContent=result;
-                   input.textContent=result;
-        
-                    console.log(result)
-                   
-                   
-                }
-                
-                
-    
-    
-        console.log(answerArray)
-            } }
-            
- else{
-    for( let numeric in answerArray){
-    //checks if any character is + so that it should add
-
-        if("+"==answerArray[numeric]){
-
-
-            console.log("yeah")
-          
-            answerArray=answerArray.join("")
-            console.log(answerArray)
-            answerArray=answerArray.split("+")
-          
-            for(let numeric in answerArray){
-                let num=parseFloat(answerArray[numeric])
-                result=num+result
-        
-        
-            }
-            finalAnswer.textContent=result;
-           input.textContent=result  ;
-
-            console.log(result)
-           
-        }
-        
-        else if("*"==answerArray[numeric]){
-
-
-            console.log("yeah")
-          
-            answerArray=answerArray.join("")
-           
-            answerArray=answerArray.split("*")
-            let result;
-           
-                 result=answerArray[0]*answerArray[1]
-        
-        
-            
-            finalAnswer.textContent=result;
-           input.textContent=result ;
-
-            console.log(result)
-           
-           
-        }
-
-        else if("/"==answerArray[numeric]){
-
-
-            console.log("yeah")
-          
-            answerArray=answerArray.join("")
-          answerArray=answerArray.split("/")
-            console.log(answerArray)
-            let result=1;
-                let num;
-                //let num=parseFloat(answerArray[add])
-                //console.log(num)
-                result=answerArray[0]/answerArray[answerArray.length-1]
-                
-        
-        
-            
-            finalAnswer.textContent=result;
-            input.textContent=result;
-
-            console.log(result)
-           
-           
-        }
-        else if("-"==answerArray[numeric]){
-
-
-            console.log("yeah")
-          
-            answerArray=answerArray.join("")
-          answerArray=answerArray.split("-")
-            console.log(answerArray)
-            let result=1;
-                let num;
-                //let num=parseFloat(answerArray[add])
-                //console.log(num)
-                result=answerArray[0]-answerArray[1]
-                
-        
-        
-            
-            finalAnswer.textContent=result;
-           input.textContent=result;
-
-            console.log(result)
-           
-           
-        }
-        
-      
-    }
-
-}   let value=input.textContent+"/";
-input.textContent=value;})
-addition.addEventListener('click',function(e){
-    
-     // let value=input.textContent+"-";
-    //input.textContent=value;
-    let num=calculating();
-    let result=0
-    let answerArray=num.split("")
-    if (answerArray[0]=="-"){
-        answerArray=answerArray.join("")
-        answerArray=answerArray.replace("-","#")
-        answerArray=answerArray.split("");
-        for( let numeric in answerArray){
-            //checks if any character is + so that it should add
-        
-                if("+"==answerArray[numeric]){
-        
-        
-                    console.log("yeah")
-                  
-                    answerArray=answerArray.join("")
-                    answerArray=answerArray.replace("#","-")
-                    answerArray=answerArray.split("+")
-                  
-                    for(let numeric in answerArray){
-                        let num=parseFloat(answerArray[numeric])
-                        result=num+result
-                
-                
-                    }
-                    finalAnswer.textContent=result;
-                   input.textContent=result  ;
-        
-                    console.log(result)
-                   
-                }
-                else if("*"==answerArray[numeric]){
-    
-    
-                    console.log("multiply")
-                  
-                    answerArray=answerArray.join("")
-                    answerArray=answerArray.replace("#","-")
-                    answerArray=answerArray.split("*")
-                    console.log("multiply",answerArray)
-                    let result=1;
-                    
-                        let num=parseFloat(answerArray[numeric])
-                        console.log(num)
-                        result=answerArray[0]*answerArray[1]
-                
-                
-                    
-                    finalAnswer.textContent=result;
-                   input.textContent=result ;
-        
-                    console.log(result)
-                   
-                   
-                }
-        
-                else if("/"==answerArray[numeric]){
-        
-        
-                    console.log("yeah")
-                  
-                    answerArray=answerArray.join("")
-                    answerArray=answerArray.replace("#","-")
-                  answerArray=answerArray.split("/")
-                    console.log(answerArray)
-                    let result=1;
-                        let num;
-                        //let num=parseFloat(answerArray[add])
-                        //console.log(num)
-                        result=answerArray[0]/answerArray[answerArray.length-1]
-                        
-                
-                
-                    
-                    finalAnswer.textContent=result;
-                    input.textContent=result;
-        
-                    console.log(result)
-                   
-                   
-                }
-                else if("-"==answerArray[numeric]){
-        
-        
-                    console.log("yeah")
-                  
-                    answerArray=answerArray.join("")
-                    
-                  answerArray=answerArray.split("-")
-                  answerArray=answerArray[0].replace("#","-")
-                    console.log(answerArray)
-                    let result=1;
-                        let num;
-                        //let num=parseFloat(answerArray[add])
-                        //console.log(num)
-                        result=answerArray[0]-answerArray[1]
-                        
-                
-                
-                    
-                    finalAnswer.textContent=result;
-                   input.textContent=result;
-        
-                    console.log(result)
-                   
-                   
-                }
-                
-                
-    
-    
-        console.log(answerArray)
-            } }
-            
-            else{ 
-                for( let numeric in answerArray){
-    //checks if any character is + so that it should add
-
-        if("+"==answerArray[numeric]){
-
-
-            console.log("yeah")
-          
-            answerArray=answerArray.join("")
-            console.log(answerArray)
-            answerArray=answerArray.split("+")
-          
-            for(let numeric in answerArray){
-                let num=parseFloat(answerArray[numeric])
-                result=num+result
-        
-        
-            }
-            finalAnswer.textContent=result;
-           input.textContent=result  ;
-
-            console.log(result)
-           
-        }
-        
-        else if("*"==answerArray[numeric]){
-
-
-            console.log("multiply")
-          
-            answerArray=answerArray.join("")
-           
-            answerArray=answerArray.split("*")
-            console.log("multiply",answerArray)
-            let result;
-            
-              
-            
-                result=answerArray[0]*answerArray[1]
-        
-        
-            
-            finalAnswer.textContent=result;
-           input.textContent=result ;
-
-            console.log(result)
-           
-           
-        }
-
-        else if("/"==answerArray[numeric]){
-
-
-            console.log("yeah")
-          
-            answerArray=answerArray.join("")
-          answerArray=answerArray.split("/")
-            console.log(answerArray)
-            let result=1;
-                let num;
-                //let num=parseFloat(answerArray[add])
-                //console.log(num)
-                result=answerArray[0]/answerArray[answerArray.length-1]
-                
-        
-        
-            
-            finalAnswer.textContent=result;
-            input.textContent=result;
-
-            console.log(result)
-           
-           
-        }
-        else if("-"==answerArray[numeric]){
-
-
-            console.log("yeah")
-          
-            answerArray=answerArray.join("")
-          answerArray=answerArray.split("-")
-            console.log(answerArray)
-            let result=1;
-                let num;
-                //let num=parseFloat(answerArray[add])
-                //console.log(num)
-                result=answerArray[0]-answerArray[1]
-                
-        
-        
-            
-            finalAnswer.textContent=result;
-           input.textContent=result;
-
-            console.log(result)
-           
-           
-        }
-        
-      
-       
-}}
-
-
-    
- 
-     let value=input.textContent+"+";
-    input.textContent=value;
-
-
-})
-subtraction.addEventListener('click',function(e){
-    
-   // let value=input.textContent+"-";
-    //input.textContent=value;
-    let num=calculating();
-    let result=0
-    let answerArray=num.split("")
-    if (answerArray[0]=="-"){
-        answerArray=answerArray.join("")
-        answerArray=answerArray.replace("-","#")
-        answerArray=answerArray.split("");
-        for( let numeric in answerArray){
-            //checks if any character is + so that it should add
-        
-                if("+"==answerArray[numeric]){
-        
-        
-                    console.log("yeah")
-                  
-                    answerArray=answerArray.join("")
-                    answerArray=answerArray.replace("#","-")
-                    answerArray=answerArray.split("+")
-                  
-                    for(let numeric in answerArray){
-                        let num=parseFloat(answerArray[numeric])
-                        result=num+result
-                
-                
-                    }
-                    finalAnswer.textContent=result;
-                   input.textContent=result  ;
-        
-                    console.log(result)
-                   
-                }
-                else if("*"==answerArray[numeric]){
-    
-    
-                    console.log("multiply")
-                  
-                    answerArray=answerArray.join("")
-                    answerArray=answerArray.replace("#","-")
-                    answerArray=answerArray.split("*")
-                    console.log("multiply",answerArray)
-                    let result=1;
-                    
-                        let num=parseFloat(answerArray[numeric])
-                        console.log(num)
-                        result=answerArray[0]*answerArray[1]
-                
-                
-                    
-                    finalAnswer.textContent=result;
-                   input.textContent=result ;
-        
-                    console.log(result)
-                   
-                   
-                }
-        
-                else if("/"==answerArray[numeric]){
-        
-        
-                    console.log("yeah")
-                  
-                    answerArray=answerArray.join("")
-                    answerArray=answerArray.replace("#","-")
-                  answerArray=answerArray.split("/")
-                    console.log(answerArray)
-                    let result=1;
-                        let num;
-                        //let num=parseFloat(answerArray[add])
-                        //console.log(num)
-                        result=answerArray[0]/answerArray[answerArray.length-1]
-                        
-                
-                
-                    
-                    finalAnswer.textContent=result;
-                    input.textContent=result;
-        
-                    console.log(result)
-                   
-                   
-                }
-                else if("-"==answerArray[numeric]){
-        
-        
-                    console.log("yeah")
-                  
-                    answerArray=answerArray.join("")
-                    
-                  answerArray=answerArray.split("-")
-                  answerArray=answerArray[0].replace("#","-")
-                    console.log(answerArray)
-                    let result=1;
-                        let num;
-                        //let num=parseFloat(answerArray[add])
-                        //console.log(num)
-                        result=answerArray[0]-answerArray[1]
-                        
-                
-                
-                    
-                    finalAnswer.textContent=result;
-                   input.textContent=result;
-        
-                    console.log(result)
-                   
-                   
-                }
-                
-                
-    
-    
-        console.log(answerArray)
-            } }
-            
-            
-            
-            else{
-    for( let numeric in answerArray){
-    //checks if any character is + so that it should add
-
-        if("+"==answerArray[numeric]){
-
-
-            console.log("yeah")
-          
-            answerArray=answerArray.join("")
-            console.log(answerArray)
-            answerArray=answerArray.split("+")
-          
-            for(let numeric in answerArray){
-                let num=parseFloat(answerArray[numeric])
-                result=num+result
-        
-        
-            }
-            finalAnswer.textContent=result;
-           input.textContent=result  ;
-
-            console.log(result)
-           
-        }
-        
-        else if("*"==answerArray[numeric]){
-
-            
-            console.log("yeah")
-          
-            answerArray=answerArray.join("")
-           
-            answerArray=answerArray.split("*")
-            let result=1;
-            
-                
-                
-                result=answerArray[0]*answerArray[1]
-        
-        
-            
-            finalAnswer.textContent=result;
-           input.textContent=result ;
-
-            console.log(result)
-           
-           
-        }
-
-        else if("/"==answerArray[numeric]){
-
-
-            console.log("yeah")
-          
-            answerArray=answerArray.join("")
-          answerArray=answerArray.split("/")
-            console.log(answerArray)
-            let result=1;
-                let num;
-                //let num=parseFloat(answerArray[add])
-                //console.log(num)
-                result=answerArray[0]/answerArray[answerArray.length-1]
-                
-        
-        
-            
-            finalAnswer.textContent=result;
-            input.textContent=result;
-
-            console.log(result)
-           
-           
-        }
-        else if("-"==answerArray[numeric]){
-
-
-            console.log("yeah")
-          
-            answerArray=answerArray.join("")
-          answerArray=answerArray.split("-")
-            console.log(answerArray)
-            let result=1;
-                let num;
-                //let num=parseFloat(answerArray[add])
-                //console.log(num)
-                result=answerArray[0]-answerArray[1]
-                
-        
-        
-            
-            finalAnswer.textContent=result;
-           input.textContent=result;
-
-            console.log(result)
-           
-           
-        }
-        
-     
-      
-    }       
-
-}  let value=input.textContent+"-";
-input.textContent=value;})
-
-
-multiplication.addEventListener('click',function(e){
-    
-    
- 
-    let num=calculating();
-    let result=0
-    let answerArray=num.split("")
- if (answerArray[0]=="-"){
+let mathematics=(num,result,answerArray)=>{
+ num=calculating();
+ result=0
+ answerArray=num.split("")
+if (answerArray[0]=="-"){
     answerArray=answerArray.join("")
     answerArray=answerArray.replace("-","#")
     answerArray=answerArray.split("");
@@ -912,9 +130,6 @@ multiplication.addEventListener('click',function(e){
             }
             else if("*"==answerArray[numeric]){
 
-
-                console.log("multiply")
-              
                 answerArray=answerArray.join("")
                 answerArray=answerArray.replace("#","-")
                 answerArray=answerArray.split("*")
@@ -972,8 +187,7 @@ multiplication.addEventListener('click',function(e){
                 console.log(answerArray)
                 let result=1;
                     let num;
-                    //let num=parseFloat(answerArray[add])
-                    //console.log(num)
+                   
                     result=answerArray[0]-answerArray[1]
                     
             
@@ -991,363 +205,145 @@ multiplication.addEventListener('click',function(e){
 
 
     console.log(answerArray)
-
- }}
-  else{
-    for( let numeric in answerArray){
-    //checks if any character is + so that it should add
-
-        if("+"==answerArray[numeric]){
-
-
-            console.log("yeah")
-          
-            answerArray=answerArray.join("")
-            console.log(answerArray)
-            answerArray=answerArray.split("+")
-          
-            for(let numeric in answerArray){
-                let num=parseFloat(answerArray[numeric])
-                result=num+result
+        } }
         
-        
-            }
-            finalAnswer.textContent=result;
-           input.textContent=result  ;
+        else{ 
+            for( let numeric in answerArray){
+//checks if any character is + so that it should add
 
-            console.log(result)
-           
+    if("+"==answerArray[numeric]){
+
+
+        console.log("yeah")
+      
+        answerArray=answerArray.join("")
+        console.log(answerArray)
+        answerArray=answerArray.split("+")
+      
+        for(let numeric in answerArray){
+            let num=parseFloat(answerArray[numeric])
+            result=num+result
+    
+    
         }
+        finalAnswer.textContent=result;
+       input.textContent=result  ;
+
+        console.log(result)
+       
+    }
+    
+    else if("*"==answerArray[numeric]){
+
+
+        console.log("multiply")
+      
+        answerArray=answerArray.join("")
+       
+        answerArray=answerArray.split("*")
+        console.log("multiply",answerArray)
+        let result;
         
-        else if("*"==answerArray[numeric]){
-
-
-            console.log("multiply")
           
-            answerArray=answerArray.join("")
-           
-            answerArray=answerArray.split("*")
-            console.log("multiply",answerArray)
-            let result=1;
-            
-                let num=parseFloat(answerArray[numeric])
-                console.log(num)
-                result=answerArray[0]*answerArray[1]
         
+            result=answerArray[0]*answerArray[1]
+    
+    
         
-            
-            finalAnswer.textContent=result;
-           input.textContent=result ;
+        finalAnswer.textContent=result;
+       input.textContent=result ;
 
-            console.log(result)
-           
-           
-        }
+        console.log(result)
+       
+       
+    }
 
-        else if("/"==answerArray[numeric]){
+    else if("/"==answerArray[numeric]){
 
 
-            console.log("yeah")
+        console.log("yeah")
+      
+        answerArray=answerArray.join("")
+      answerArray=answerArray.split("/")
+        console.log(answerArray)
+        let result=1;
+            let num;
           
-            answerArray=answerArray.join("")
-          answerArray=answerArray.split("/")
-            console.log(answerArray)
-            let result=1;
-                let num;
-                //let num=parseFloat(answerArray[add])
-                //console.log(num)
-                result=answerArray[0]/answerArray[answerArray.length-1]
-                
-        
-        
+            result=answerArray[0]/answerArray[answerArray.length-1]
+
+        finalAnswer.textContent=result;
+        input.textContent=result;
+
+        console.log(result)
+       
+       
+    }
+    else if("-"==answerArray[numeric]){
+
+
+        console.log("yeah")
+      
+        answerArray=answerArray.join("")
+      answerArray=answerArray.split("-")
+        console.log(answerArray)
+        let result=1;
+            let num;
+           
+            result=answerArray[0]-answerArray[1]
             
-            finalAnswer.textContent=result;
-            input.textContent=result;
+        finalAnswer.textContent=result;
+       input.textContent=result;
 
-            console.log(result)
-           
-           
-        }
-        else if("-"==answerArray[numeric]){
+        console.log(result)  
+    }  
+}}}
+
+divide.addEventListener('click',function(e){
+mathematics();
+    sign("/");})
+addition.addEventListener('click',function(e){
+    
+   mathematics()
+   
+sign("+")
+})
+subtraction.addEventListener('click',function(e){
+mathematics()
+  sign("-")})
 
 
-            console.log("yeah")
-          
-            answerArray=answerArray.join("")
-          answerArray=answerArray.split("-")
-            console.log(answerArray)
-            let result=1;
-                let num;
-                //let num=parseFloat(answerArray[add])
-                //console.log(num)
-                result=answerArray[0]-answerArray[1]
-                
-        
-        
-            
-            finalAnswer.textContent=result;
-           input.textContent=result;
-
-            console.log(result)
-           
-           
-        }
-        
-   }}
-let value=input.textContent+"*";
-input.textContent=value;
+multiplication.addEventListener('click',function(e){
+    
+ mathematics()   
+ 
+   sign("*")
 
 })
 
-
-
-
-//addition 
-
-calculating()
   
 equal.addEventListener('click',function(e){
-    
-
-    let num=calculating();
-    let result=0
-    let answerArray=num.split("")
-    if(answerArray[0]=="-"){
-        answerArray=answerArray.join("")
-        answerArray=answerArray.replace("-","#")
-        answerArray=answerArray.split("");
-        for( let numeric in answerArray){
-            //checks if any character is + so that it should add
-        
-                if("+"==answerArray[numeric]){
-        
-        
-                    console.log("yeah")
-                  
-                    answerArray=answerArray.join("")
-                    answerArray=answerArray.replace("#","-")
-                    answerArray=answerArray.split("+")
-                  
-                    for(let numeric in answerArray){
-                        let num=parseFloat(answerArray[numeric])
-                        result=num+result
-                
-                
-                    }
-                    finalAnswer.textContent=result;
-                   input.textContent=result  ;
-        
-                    console.log(result)
-                   
-                }
-                else if("*"==answerArray[numeric]){
-    
-    
-                    console.log("multiply")
-                  
-                    answerArray=answerArray.join("")
-                    answerArray=answerArray.replace("#","-")
-                    answerArray=answerArray.split("*")
-                    console.log("multiply",answerArray)
-                    let result=1;
-                    
-                        let num=parseFloat(answerArray[numeric])
-                        console.log(num)
-                        result=answerArray[0]*answerArray[1]
-                
-                
-                    
-                    finalAnswer.textContent=result;
-                   input.textContent=result ;
-        
-                    console.log(result)
-                   
-                   
-                }
-        
-                else if("/"==answerArray[numeric]){
-        
-        
-                    console.log("yeah")
-                  
-                    answerArray=answerArray.join("")
-                    answerArray=answerArray.replace("#","-")
-                  answerArray=answerArray.split("/")
-                    console.log(answerArray)
-                    let result=1;
-                        let num;
-                        //let num=parseFloat(answerArray[add])
-                        //console.log(num)
-                        result=answerArray[0]/answerArray[answerArray.length-1]
-                        
-                
-                
-                    
-                    finalAnswer.textContent=result;
-                    input.textContent=result;
-        
-                    console.log(result)
-                   
-                   
-                    }
-                else if("-"==answerArray[numeric]){
-        
-        
-                    console.log("yeah")
-                  
-                    answerArray=answerArray.join("")
-                    
-                  answerArray=answerArray.split("-")
-                  answerArray=answerArray[0].replace("#","-")
-                    console.log(answerArray)
-                    let result=1;
-                        let num;
-                        //let num=parseFloat(answerArray[add])
-                        //console.log(num)
-                        result=answerArray[0]-answerArray[1]
-                        
-                
-                
-                    
-                    finalAnswer.textContent=result;
-                   input.textContent=result;
-        
-                    console.log(result)
-                   
-                   
-                }
-                
-                
-    
-    
-        console.log(answerArray)
-            
-     }}
-    
-
-
-
-    
-    
-    else {
-        for (let numeric in answerArray) {
-            //checks if any character is + so that it should add
-            if ("+" == answerArray[numeric]) {
-
-
-
-
-                answerArray = answerArray.join("")
-                answerArray = answerArray.split("+")
-
-                for (let numeric in answerArray) {
-                    let num = parseFloat(answerArray[numeric])
-                    result = num + result
-
-
-                }
-                finalAnswer.textContent = result
-                input.textContent = result
-
-            }
-            else if ("*" == answerArray[numeric]) {
-
-
-
-
-                answerArray = answerArray.join("")
-                answerArray = answerArray.split("*")
-
-                let num = parseFloat(answerArray[numeric])
-                result = answerArray[0] * answerArray[1]
-
-
-                input.textContent = result
-                finalAnswer.textContent = result
-                console.log(result)
-
-            }
-            else if ("-" == answerArray[numeric]) {
-
-
-                console.log("yeah")
-
-                answerArray = answerArray.join("")
-                answerArray = answerArray.split("-")
-
-
-
-                result = answerArray[0] - answerArray[1]
-
-
-                input.textContent = result
-                finalAnswer.textContent = result
-                console.log(result)
-
-            }
-            else if ("/" == answerArray[numeric]) {
-
-
-                console.log("yeah")
-
-                answerArray = answerArray.join("")
-                answerArray = answerArray.split("/")
-
-
-
-                result = answerArray[0] / answerArray[1]
-
-
-                input.textContent = result
-                finalAnswer.textContent = result
-                console.log(result)
-
-            }
-
-        }
-
-    }
-
-    })
-
-clear.addEventListener('click',function(e){
-    
-    input.textContent="0";
-    finalAnswer.textContent="0";
-})
-let del=document.querySelector("#clearOne")
-//a delet button that removes only the last element
-del.addEventListener('click',function(e){
-let clear;
-    clear=calculating();
-    clear=clear.split("")
-    if(clear.length==1){
-        input.textContent="0";
-
-
-    }
-    else{
-    clear=clear.slice(0,clear.length-1)
-    clear=clear.join("")
-    input.textContent=clear;
-    }
-
+    mathematics();
 
 })
 let square=document.querySelector('#square')
 
 square.addEventListener('click',()=>{
-
+mathematics()
 let ans=input.textContent;
 ans=parseFloat(ans)
 ans=ans*ans;
-
-input.textContent=ans
-
-
-
+input.textContent=ans;
 })
 
+clear.addEventListener('click',function(e){
+    input.textContent="0";
+})
 
-  
+del.addEventListener('click',function(e){
+    let value=input.textContent;
+    value=value.split("");
+    value=value.splice(0,value.length-1);
+    value=value.join("");
+     (value.length==0)? input.textContent="0" : input.textContent=value;
+})  
  

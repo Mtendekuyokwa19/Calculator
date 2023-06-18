@@ -121,9 +121,9 @@ border-top: solid 1px blue;
  
    
   .github{
-    background: white;
-    color: #03001C;;
-    fill: #03001C;
+    background:  #333333;;
+      color: white ;
+      fill: white;
   
   width: 34px;
 height: 40px;
@@ -133,8 +133,6 @@ border-radius:80% ;
 }
 
     .github:hover{
-      background: #6441a5;
-      color: white ;
-      fill: white;
 
+background-color: green;
   }
